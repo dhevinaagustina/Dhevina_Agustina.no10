@@ -19,7 +19,7 @@ public class Lingkaran11 {
         
         System.out.print("Luas lingkaran adalah:");
         System.out.println(luas);
-        System.out.println(2+1);
+
 
 
 
