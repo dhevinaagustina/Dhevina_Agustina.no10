@@ -3,20 +3,26 @@ public class PemilihanPercobaan211 {
     public static void main(String[] args) {
         Scanner input11=new Scanner(System.in);
 
-        System.out.print("Nilai UAS   :");
-        float uas = input11.nextFloat();
-        System.out.print("Nilai UTS   :");
-        float uts = input11.nextFloat();
-        System.out.print("Nilai kuis  :");
-        float kuis = input11.nextFloat();
-        System.out.print("Nilai tugas :");
-        float tugas = input11.nextFloat();
+        //DEKLARASI
+        Float uas, uts, kuis, tugas, total;
 
-        float total = (uas * 0.4F) + (uts * 0.3F) + (kuis * 0.1F)  +(tugas * 0.2F);
+        //INPUT
+        System.out.print("Nilai UAS   :");
+        uas = input11.nextFloat();
+        System.out.print("Nilai UTS   :");
+        uts = input11.nextFloat();
+        System.out.print("Nilai kuis  :");
+        kuis = input11.nextFloat();
+        System.out.print("Nilai tugas :");
+        tugas = input11.nextFloat();
+
+        //OPERATOR
+        total = (uas * 0.4F) + (uts * 0.3F) + (kuis * 0.1F)  +(tugas * 0.2F);
 
         String messege = total < 65 ? " Remidi " : " Tidak remidi ";
         System.out.println(" Nilai akhir = " + total + " sehingga " + messege);
 
+        //OUTPUT
         if (80<total && total<=100){
             System.out.println("Nilai akhir adalah A Setara 4 Kualifikasi Sangat Baik");
         }
