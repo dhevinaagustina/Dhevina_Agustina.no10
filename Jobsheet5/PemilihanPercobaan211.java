@@ -29,13 +29,13 @@ public class PemilihanPercobaan211 {
         else if (73<total && total<=80){
             System.out.println("Nilai akhir adalah B+ Setara 3,5 Kualifikasi Lebih dari Baik");
         }
-        else if (65>total && total<=73){
+        else if (65<total && total<=73){
             System.out.println("Nilai akhir adalah B Setara 3 Kualifikasi Baik");
         }
-        else if (60>total && total<=65){
+        else if (60<total && total<=65){
             System.out.println("Nilai akhir adalah C+ Setara 2,5 Kualifikasi Lebih dari Cukup");
         }
-        else if (50>total && total<=60){
+        else if (50<total && total<=60){
             System.out.println("Nilai akhir adalah C Setera 2 Kualifikasi Cukup");
         }
         else if (39>total && total<=50){
