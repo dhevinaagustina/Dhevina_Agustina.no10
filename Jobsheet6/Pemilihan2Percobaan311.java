@@ -2,7 +2,8 @@ import java.util.Scanner;
 public class Pemilihan2Percobaan311 {
     public static void main(String[] args) {
         Scanner input11 = new Scanner(System.in);
-
+       
+        //
         String kategori;
         int penghasilan, gajiBersih;
         double pajak = 0;
