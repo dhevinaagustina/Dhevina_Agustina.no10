@@ -20,12 +20,10 @@ public class ArrayRataNilai10 {
         
         for (int i = 0; i < nilaiMhs.length; i++){
             if (nilaiMhs [i] > 70){
-                System.out.println("Mahasiaswa ke- " + (i+1) + " Lulus!");
                 total += nilaiMhs [i];
                 jmlMhsLulus++;
             }
             else {
-                System.out.println("Mahasiswa ke- " + (i+1) + " Tidak Lulus!");
                 totalTdkLulus += nilaiMhs [i];
                 jmlMhsTdkLulus++;
             }
