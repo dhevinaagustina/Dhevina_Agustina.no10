@@ -4,12 +4,15 @@ public class ArrayRataNilai10 {
     public static void main(String[] args) {
         Scanner input = new Scanner (System.in);
 
-        int [] nilaiMhs = new int [10];
+        int jmlMhs;
         double total = 0 ,totalTdkLulus = 0;
         double rata2 , rata2MhsTdkLulus;
         int jmlMhsLulus = 0, jmlMhsTdkLulus = 0;
-
-
+        
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        jmlMhs = input.nextInt();
+        int [] nilaiMhs = new int [jmlMhs];
+        
         for (int i = 0; i < nilaiMhs.length;i++){
             System.out.print("Masukkan Nilai Mahasiswa ke- " + (i+1) + ":");
             nilaiMhs[i] = input.nextInt();
