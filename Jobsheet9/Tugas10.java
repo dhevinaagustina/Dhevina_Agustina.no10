@@ -17,16 +17,14 @@ public class Tugas10 {
         }
         
         int nilaiMax = nilai[0];
-        for ( int i = 0; i < jmlElemen; i++){
-            if (nilaiMax < nilai [i]){
-                nilaiMax = nilai [i];
-            }
-        }
+        int nilaiMin = nilai[0];
         
-        int nilaiMin = nilai [0];
-        for ( int i = 0; i < jmlElemen; i++){
-            if (nilaiMin > nilai [i]){
-                nilaiMin = nilai [i];
+        for (int i = 1; i < jmlElemen; i++) {
+            if (nilaiMax < nilai[i]) {
+                nilaiMax = nilai[i];
+            }
+            if (nilaiMin > nilai[i]) {
+                nilaiMin = nilai[i];
             }
         }
         
