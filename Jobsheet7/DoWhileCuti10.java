@@ -10,11 +10,11 @@ public class DoWhileCuti10 {
         jatahCuti = sc.nextInt();
 
         do{
-            System.out.println("Apakah anda ingin mengambil cuti (y/t)? ");
+            System.out.print("Apakah anda ingin mengambil cuti (y/t)? :");
             konfirmasi = sc.next();
             
             if (konfirmasi.equalsIgnoreCase("y")){
-                System.out.println("Jumlah hari: ");
+                System.out.print("Jumlah hari: ");
                 jumlahHari = sc.nextInt();
                 while (jatahCuti < jumlahHari){
                     System.out.println("Jumlah hari yang anda masukkan lebih besar dari sisa jatah cuti yang anda miliki");
@@ -33,7 +33,7 @@ public class DoWhileCuti10 {
                 break;
             }
 
-        }while (jatahCuti>0);
+        }while (jatahCuti > 0);
     sc.close();
     }
     
