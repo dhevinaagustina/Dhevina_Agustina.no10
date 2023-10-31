@@ -6,7 +6,7 @@ public class LinearSearch10 {
         
         int jmlElemenArray;
         int key;
-        int hasil = 0;
+       // int hasil = 0;
         boolean posisiKey = false;
         
         System.out.print("Masukkan jumlah Elemen Array: ");
@@ -29,8 +29,17 @@ public class LinearSearch10 {
             }
         
         }
-        if (posisiKey == false){
+        int i = 0;
+        while (posisiKey == false){
             System.out.println("KEY TIDAK DITEMUKAN");
+            System.out.print("Masukkan Key yang anda cari: ");    
+            key = input.nextInt();
+            if (arrayInt [i] == key){
+                System.out.println("Key berada di posisi Indeks ke- " + i);
+                posisiKey = true;
+                break;
+            }
+            
         }
         
 

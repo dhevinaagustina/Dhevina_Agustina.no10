@@ -13,10 +13,10 @@ public class ArrayNilai10 {
 
         for (int i = 0; i < 10; i++){
             if (nilaiAkhir[i] > 70){
-                System.out.println("Mahasiaswa ke- " + i + "Lulus!");
+                System.out.println("Mahasiaswa ke- " + i + " Lulus!");
             }
             else {
-                System.out.println("Mahasiswa ke- " + i + "Tidak Lulus!");
+                System.out.println("Mahasiswa ke- " + i + " Tidak Lulus!");
             }
 
             }
