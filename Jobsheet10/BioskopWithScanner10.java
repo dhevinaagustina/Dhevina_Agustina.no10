@@ -21,6 +21,7 @@ public class BioskopWithScanner10 {
             input.nextLine();
             switch (pilihan) {
                 case 1:
+                while (true){
                     System.out.print("Masukkan nama: ");
                     nama = input.next();
                     System.out.print("Masukkan baris: ");
@@ -29,15 +30,28 @@ public class BioskopWithScanner10 {
                     kolom = input.nextInt();
                     input.nextLine();
                     if (baris > penonton.length || baris < 1 || kolom > penonton[0].length || kolom < 1) {
-                        System.out.println("Nomor baris/kolom kursi tidak tersedia!");
-                    } else {
+                        System.out.println("NOMOR BARIS/KOLOM TIDAK TERSEDIA!");
+                    }else if (penonton [baris-1][kolom-1] != null) {
+                        System.out.println("WARNING!!!\nBaris dan kolom yang anda masukkan telah terisi");
+                        System.out.println("Masukkan Ulang!");
+                    }else {
                         penonton[baris - 1][kolom - 1] = nama;
                     }
-                    break;
+                    System.out.print("Input penonton lainnya? (y/t): ");
+                    next = input.nextLine();
+                    if (next.equalsIgnoreCase("t")){
+                        break;
+                    }
+                }
+                break;
                 case 2:
                     for (int i = 0; i < penonton.length; i++) {
                         for (int j = 0; j < penonton[i].length; j++) {
-                            System.out.print(penonton[i][j] + " ");
+                            if (penonton[i][j] != null){
+                                 System.out.print(penonton[i][j] + " ");
+                            }else{
+                                System.out.print("*** ");
+                            }
                         }
                         System.out.println();
                     }
@@ -53,13 +67,9 @@ public class BioskopWithScanner10 {
             }
         }
 
-          //  System.out.print("Input penonton lainnya? (y/t): ");
-           // next = input.nextLine();
-
-            // if (next.equalsIgnoreCase("t")){
-              //  break;
             }
         }
+    
        
     
 
