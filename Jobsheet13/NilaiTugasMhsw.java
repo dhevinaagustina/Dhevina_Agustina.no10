@@ -1,27 +1,46 @@
 package Jobsheet13;
 import java.util.Scanner;
 public class NilaiTugasMhsw {
+    static int inputNilaiMhs [][] = new int[5][7];
+    static String [] namaMhs = new String[5];
+    private static final int[][] NilaiMahasiswa = null;
+
+    //fungsi untuk input nilai
     public static int [][] NilaiMahasiswa (){
         Scanner input = new Scanner(System.in);
-        int NilaiMahasiswa [][] = {
-            {20,19,25,20,10,0,10},
-            {30,30,40,10,15,20,25},
-            {5,0,20,25,10,5,45},
-            {50,0,7,8,0,30,60},
-            {15,10,16,15,10,10,5},
-        };
-        return NilaiMahasiswa;
-    }
-    public static void TampilNilaiMahasiswa (String [] namaMhs, int [][] nilaiMhs){
-        for (int i = 0; i < nilaiMhs.length; i++){
-            System.out.println("======");
-            System.out.println(namaMhs[i]);
-            System.out.println("======");
-            for (int j = 0; j < nilaiMhs[i].length; j++){
-                System.out.println("Nilai minggu ke- " + (j+1) + " adalah " + nilaiMhs[i][j]);
+
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = input.nextInt();
+        inputNilaiMhs = new int[jumlahMahasiswa][];
+                                                                                                                                                                                                                        
+        System.out.print("Masukkan jumlah tugas per mahasiswa: ");
+        int jumlahTugas = input.nextInt();
+        namaMhs = new String[jumlahMahasiswa];
+
+        for (int i = 0; i < jumlahMahasiswa; i++) {
+            inputNilaiMhs[i] = new int[jumlahTugas];
+            System.out.print("Masukkan nama mahasiswa ke-" + (i + 1) + ": ");
+            namaMhs[i] = input.next();
+            System.out.println("Masukkan nilai tugas untuk mahasiswa " + namaMhs[i] + ":");
+            for (int j = 0; j < jumlahTugas; j++) {
+                System.out.print("Nilai tugas " + (j + 1) + ": ");
+                inputNilaiMhs[i][j] = input.nextInt();
             }
         }
+        return NilaiMahasiswa;
     }
+    //fungsi untuk menampilkan nilai
+    public static void TampilNilaiMahasiswa (){
+        System.out.println("Nilai Mahasiswa dalam satu minggu:");
+        for (int i = 0; i < namaMhs.length; i++){
+            System.out.print(namaMhs[i] + " : ");
+            for (int j = 0; j < inputNilaiMhs[i].length; j++){
+                System.out.print(inputNilaiMhs[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    //fungdi untuk menghitung nilai tertinggi
     public static int [] NilaiTertinggi (int [][] nilaiMhs){
         int mingguKe = 0;
         int nilaiTertinggi = 0;
@@ -40,6 +59,7 @@ public class NilaiTugasMhsw {
         int [] mK = {nilaiTertinggi,mingguKe};
         return mK;
     }
+    //fungsi untuk menunjukkan nama mahasiswa nilai tertinggi
     public static void NamaMhsNT (String [] namaMhs, int [][] nilaiMhs){
         int nilaiTertinggi = nilaiMhs[0][0];
         int mk = 0;
@@ -54,16 +74,16 @@ public class NilaiTugasMhsw {
             }
 
         }
+        System.out.println("====================================================================");
         System.out.println("Nilai Tertinggi di raih oleh " + nama +" dengan nilai = " + nilaiTertinggi + " pada minggu ke " + mk );
+        System.out.println("====================================================================");
     }
 
     public static void main(String[] args) {
-        String [] namaMhs = {"Sari","Rina","Yani","Dwi","Lusi"};
-        int [][] nilaiMhs = NilaiMahasiswa();
+        NilaiMahasiswa();
+        TampilNilaiMahasiswa();
 
-        TampilNilaiMahasiswa(namaMhs, nilaiMhs);
-        
-        int nT [] = NilaiTertinggi(nilaiMhs);
+        int nT [] = NilaiTertinggi(inputNilaiMhs);
         int nilaiTertinggi = nT[0];
         int mingguKe = nT[1];
 
@@ -71,6 +91,6 @@ public class NilaiTugasMhsw {
         System.out.println("Nilai tertinggi mahsiswa minggu ke- " + mingguKe + " senilai " + nilaiTertinggi);
         System.out.println("========================================================");
 
-        NamaMhsNT(namaMhs,nilaiMhs);
+        NamaMhsNT(namaMhs, inputNilaiMhs);
     }
 }
